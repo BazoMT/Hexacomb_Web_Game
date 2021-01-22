@@ -277,11 +277,6 @@ function StatusBar() {
     socket.onopen = function () {
         socket.send("{}");
     };
-
-    //server sends a close event only if the game was aborted from some side
-    socket.onclose = function () {
-        sb.setStatus(Status["aborted"]);
-    };
   
     socket.onerror = function () { };
 })();
